@@ -84,7 +84,6 @@ public class App {
             }
         } catch (Exception e) {
             System.err.println(e);
-            System.err.println("Faild to open stdinput Stream");
             System.exit(1);
         }
 
