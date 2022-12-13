@@ -11,12 +11,17 @@ public class App {
     public static void main(String[] args) {
         Othello othello = new Othello();
         othello.printBoard();
+        othello.printStatics();
 
         /**
          * test欄
          */
         System.out.println(othello.checkPuttable(0, 0, false));
         System.out.println(othello.checkPuttable(2, 3, true));
+
+        othello.put(2, 3, true);
+        othello.printBoard();
+        othello.printStatics();
         // ここまで
     }
 }
