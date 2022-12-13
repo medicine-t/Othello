@@ -15,8 +15,8 @@ public class App {
         /**
          * test欄
          */
-        System.out.println(othello.isValid(0, 0, false));
-        System.out.println(othello.isValid(2, 3, true));
+        System.out.println(othello.checkPuttable(0, 0, false));
+        System.out.println(othello.checkPuttable(2, 3, true));
         // ここまで
     }
 }
