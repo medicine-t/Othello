@@ -9,6 +9,14 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Othello othello = new Othello();
+        othello.printBoard();
+
+        /**
+         * test欄
+         */
+        System.out.println(othello.isValid(0, 0, false));
+        System.out.println(othello.isValid(2, 3, true));
+        // ここまで
     }
 }
