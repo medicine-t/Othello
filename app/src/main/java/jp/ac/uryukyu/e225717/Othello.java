@@ -77,55 +77,29 @@ public class Othello {
             return new ArrayList<>();
         else {
             ArrayList<Reversible> puttable = new ArrayList<>();
-            if (isBlack) {
-                for (int d = 0; d < 8; d++) {
-                    int ni = i;
-                    int nj = j;
-                    boolean breaked = false;
-                    int reverseCount = 0;
-                    do {
-                        ni += di[d];
-                        nj += dj[d];
-                        if (Math.min(ni, nj) < 0) {
-                            breaked = true;
-                            break;
-                        }
-                        if (Math.max(ni, nj) >= 8) {
-                            breaked = true;
-                            break;
-                        }
-                        reverseCount++;
-                    } while (board.whiteBoard[ni][nj]);
-                    if (!breaked && reverseCount > 1 && board.blackBoard[ni][nj]) {
-                        puttable.add(new Reversible(ni, nj, d));
+            for (int d = 0; d < 8; d++) {
+                int ni = i;
+                int nj = j;
+                boolean breaked = false;
+                int reverseCount = 0;
+                do {
+                    ni += di[d];
+                    nj += dj[d];
+                    if (Math.min(ni, nj) < 0) {
+                        breaked = true;
+                        break;
                     }
-                }
-                return puttable;
-            } else {
-                for (int d = 0; d < 8; d++) {
-                    int ni = i;
-                    int nj = j;
-                    boolean breaked = false;
-                    int reverseCount = 0;
-                    do {
-                        ni += di[d];
-                        nj += dj[d];
-                        if (Math.min(ni, nj) < 0) {
-                            breaked = true;
-                            break;
-                        }
-                        if (Math.max(ni, nj) >= 8) {
-                            breaked = true;
-                            break;
-                        }
-                        reverseCount++;
-                    } while (board.blackBoard[ni][nj]);
-                    if (!breaked && reverseCount > 1 && board.whiteBoard[ni][nj]) {
-                        puttable.add(new Reversible(ni, nj, d));
+                    if (Math.max(ni, nj) >= 8) {
+                        breaked = true;
+                        break;
                     }
+                    reverseCount++;
+                } while (isBlack ? board.whiteBoard[ni][nj] : board.blackBoard[ni][nj]);
+                if (!breaked && reverseCount > 1 && (isBlack ? board.blackBoard[ni][nj] : board.whiteBoard[ni][nj])) {
+                    puttable.add(new Reversible(ni, nj, d));
                 }
-                return puttable;
             }
+            return puttable;
         }
     }
 
