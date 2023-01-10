@@ -9,7 +9,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
-    id 'org.openjfx.javafxplugin' version '0.0.13'
+    //id 'org.openjfx.javafxplugin' version '0.0.13'
 }
 
 repositories {
@@ -27,7 +27,13 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'jp.ac.uryukyu.e225717.HelloFX'
+    mainClass = 'jp.ac.uryukyu.e225717.App'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'jp.ac.uryukyu.e225717.App'
+    }
 }
 
 tasks.named('test') {
@@ -35,7 +41,6 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-javafx {
-    version = "19"
-    modules = [ 'javafx.controls','javafx.fxml' ]
+run {
+    standardInput = System.in
 }
