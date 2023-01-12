@@ -18,6 +18,8 @@ public class GameManager {
     void sessionStart(Player pl1, Player pl2) {
         this.initialize();
         while (true) {
+            othello.printBoard();
+            othello.printStatics();
             boolean isExistPuttable = false;
             for (int i = 0; i < 8; i++) {
                 for (int j = 0; j < 8; j++) {
@@ -34,9 +36,6 @@ public class GameManager {
                 othello.processTurn();
                 continue;
             }
-
-            othello.printBoard();
-            othello.printStatics();
 
             Integer i, j;
             MutablePair<Integer, Integer> order;
