@@ -51,11 +51,11 @@ public class GameManager {
             if (this.isFinish()) {
                 othello.printBoard();
                 if (othello.board.blackCount < othello.board.whiteCount) {
-                    System.out.println("白:後手番　の勝ちです!");
+                    System.out.println("白:後手番[o] の勝ちです!");
                 } else if (othello.board.blackCount == othello.board.whiteCount) {
                     System.out.println("引き分けです!");
                 } else {
-                    System.out.println("黒:先手番　の勝ちです!");
+                    System.out.println("黒:先手番[x] の勝ちです!");
                 }
                 break;
             }
