@@ -25,6 +25,8 @@ public class InteractivePlayer implements Player {
                     break;
                 } else {
                     System.err.println("無効な置き場所です.");
+                    othello.printBoard();
+                    othello.printStatics();
                 }
             }
             return MutablePair.of(i, j);
