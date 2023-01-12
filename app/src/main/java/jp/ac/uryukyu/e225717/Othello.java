@@ -2,6 +2,8 @@ package jp.ac.uryukyu.e225717;
 
 import java.util.ArrayList;
 
+import org.apache.commons.lang3.tuple.MutablePair;
+
 class Reversible {
     int i;
     int j;
@@ -115,6 +117,18 @@ public class Othello {
             }
             return puttable;
         }
+    }
+
+    ArrayList<MutablePair<Integer, Integer>> listUpPuttable() {
+        ArrayList<MutablePair<Integer, Integer>> candicate = new ArrayList<>();
+        for (Integer i = 0; i < this.board.BOARD_HEIGHT; i++) {
+            for (Integer j = 0; j < this.board.BOARD_WIDTH; j++) {
+                if (!this.checkPuttable(i, j, this.getTurn() % 2 == 0).isEmpty()) {
+                    candicate.add(MutablePair.of(i, j));
+                }
+            }
+        }
+        return candicate;
     }
 
     void printBoard() {
