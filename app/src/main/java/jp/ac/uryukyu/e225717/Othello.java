@@ -18,9 +18,23 @@ public class Othello {
     OthelloBoard board = new OthelloBoard();
     private int[] di = { -1, -1, -1, 0, 0, 1, 1, 1 };
     private int[] dj = { -1, 0, 1, -1, 1, -1, 0, 1 };
+    private int turn;
 
     Othello() {
         System.out.println("white: o / black: x");
+        turn = 0;
+    }
+
+    void setTurn(int t) {
+        turn = t;
+    }
+
+    int getTurn() {
+        return this.turn;
+    }
+
+    void processTurn() {
+        turn++;
     }
 
     boolean put(int i, int j, boolean isBlack) {

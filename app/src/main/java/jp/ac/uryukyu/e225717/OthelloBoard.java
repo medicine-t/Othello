@@ -1,8 +1,10 @@
 package jp.ac.uryukyu.e225717;
 
 public class OthelloBoard {
-    boolean[][] whiteBoard = new boolean[8][8];
-    boolean[][] blackBoard = new boolean[8][8];
+    final int BOARD_WIDTH = 8;
+    final int BOARD_HEIGHT = 8;
+    boolean[][] whiteBoard = new boolean[BOARD_HEIGHT][BOARD_WIDTH];
+    boolean[][] blackBoard = new boolean[BOARD_HEIGHT][BOARD_WIDTH];
     int whiteCount = 0;
     int blackCount = 0;
 
@@ -15,9 +17,9 @@ public class OthelloBoard {
 
     void printBoard() {
         System.out.println(" 01234567");
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < BOARD_HEIGHT; i++) {
             System.out.printf("%d", i);
-            for (int j = 0; j < 8; j++) {
+            for (int j = 0; j < BOARD_WIDTH; j++) {
                 if (whiteBoard[i][j]) {
                     System.out.printf("o");
                 } else if (blackBoard[i][j]) {
