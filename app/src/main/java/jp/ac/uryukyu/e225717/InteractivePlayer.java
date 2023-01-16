@@ -3,6 +3,9 @@ package jp.ac.uryukyu.e225717;
 import java.util.Scanner;
 import org.apache.commons.lang3.tuple.MutablePair;
 
+/**
+ * CUIによる操作可能なプレイヤークラス
+ */
 public class InteractivePlayer implements Player {
     Scanner stdin;
 

@@ -39,6 +39,14 @@ public class Othello {
         turn++;
     }
 
+    /**
+     * 引数に与えられたポジションに駒を設置する。
+     * 
+     * @param i
+     * @param j
+     * @param isBlack
+     * @return boolean: 実際に設置できたか否か
+     */
     boolean put(int i, int j, boolean isBlack) {
         var puttable = checkPuttable(i, j, isBlack);
         if (puttable.isEmpty()) {
@@ -78,7 +86,7 @@ public class Othello {
     }
 
     /**
-     * 駒の反転処理は別関数で…
+     * 駒の反転処理は別関数で行う。
      * 
      * @param i
      * @param j
@@ -119,6 +127,11 @@ public class Othello {
         }
     }
 
+    /**
+     * 手番により設置可能なマスをリストアップする。
+     * 
+     * @return ArrayList<[設置可能なマスの情報(i,j)]>
+     */
     ArrayList<MutablePair<Integer, Integer>> listUpPuttable() {
         ArrayList<MutablePair<Integer, Integer>> candicate = new ArrayList<>();
         for (Integer i = 0; i < this.board.BOARD_HEIGHT; i++) {
@@ -135,6 +148,9 @@ public class Othello {
         board.printBoard();
     }
 
+    /**
+     * 現在の各手番の持ち駒の数を表示する。
+     */
     void printStatics() {
         System.out.printf("Statics: Black%d,White%d\n", board.blackCount, board.whiteCount);
     }

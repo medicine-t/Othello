@@ -11,9 +11,10 @@ public class GameManager {
     }
 
     /**
+     * ゲームセッションを初期化してスタートする。
      * 
-     * @param pl1 先手
-     * @param pl2 後手
+     * @param pl1 先手。Playerのinterfaceを実装している必要がある。
+     * @param pl2 後手。Playerのinterfaceを実装している必要がある。
      */
     int sessionStart(Player pl1, Player pl2) {
         this.initialize();
@@ -64,6 +65,12 @@ public class GameManager {
         }
     }
 
+    /**
+     * 盤面の終了判定を行う。
+     * 各マスについて駒の設置判定を行うことで終了判定を行っている。
+     * 
+     * @return boolean
+     */
     boolean isFinish() {
         for (int t = 0; t < 2; t++) {
             for (int i = 0; i < othello.board.BOARD_HEIGHT; i++) {

@@ -15,6 +15,11 @@ public class OthelloBoard {
         blackCount = 2;
     }
 
+    /**
+     * 標準出力に現在の盤面を出力する。
+     * この出力には縦/横のindexが含まれる
+     * 先手番の駒を`x`,後手番の駒を`o`,未使用のマスは`.`で表される
+     */
     void printBoard() {
         System.out.println(" 01234567");
         for (int i = 0; i < BOARD_HEIGHT; i++) {
