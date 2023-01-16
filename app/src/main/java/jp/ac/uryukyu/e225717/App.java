@@ -12,7 +12,7 @@ public class App {
 
         var stdin = new Scanner(System.in);
         Player pl1 = new InteractivePlayer(stdin);
-        Player pl2 = new InteractivePlayer(stdin);
+        Player pl2 = new RandomWalk();
         gameManager.sessionStart(pl1, pl2);
         return;
     }
