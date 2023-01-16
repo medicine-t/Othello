@@ -86,7 +86,7 @@ public class Othello {
      * @return true/false
      */
     ArrayList<Reversible> checkPuttable(int i, int j, boolean isBlack) {
-        if ((i < 0 || i > 8) || (j < 0 || i > 8)) {
+        if ((i < 0 || i > board.BOARD_HEIGHT) || (j < 0 || j > board.BOARD_WIDTH)) {
             return new ArrayList<>();
         }
         if (board.blackBoard[i][j] || board.whiteBoard[i][j])

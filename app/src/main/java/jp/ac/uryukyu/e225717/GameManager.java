@@ -15,14 +15,14 @@ public class GameManager {
      * @param pl1 先手
      * @param pl2 後手
      */
-    void sessionStart(Player pl1, Player pl2) {
+    int sessionStart(Player pl1, Player pl2) {
         this.initialize();
         while (true) {
             othello.printBoard();
             othello.printStatics();
             boolean isExistPuttable = false;
-            for (int i = 0; i < 8; i++) {
-                for (int j = 0; j < 8; j++) {
+            for (int i = 0; i < othello.board.BOARD_HEIGHT; i++) {
+                for (int j = 0; j < othello.board.BOARD_WIDTH; j++) {
                     if (!othello.checkPuttable(i, j, othello.getTurn() % 2 == 0).isEmpty()) {
                         isExistPuttable = true;
                         break;
@@ -52,21 +52,22 @@ public class GameManager {
                 othello.printBoard();
                 if (othello.board.blackCount < othello.board.whiteCount) {
                     System.out.println("白:後手番[o] の勝ちです!");
+                    return -1;
                 } else if (othello.board.blackCount == othello.board.whiteCount) {
                     System.out.println("引き分けです!");
+                    return 0;
                 } else {
                     System.out.println("黒:先手番[x] の勝ちです!");
+                    return 1;
                 }
-                break;
             }
         }
-        return;
     }
 
     boolean isFinish() {
         for (int t = 0; t < 2; t++) {
-            for (int i = 0; i < 8; i++) {
-                for (int j = 0; j < 8; j++) {
+            for (int i = 0; i < othello.board.BOARD_HEIGHT; i++) {
+                for (int j = 0; j < othello.board.BOARD_WIDTH; j++) {
                     if (!othello.checkPuttable(i, j, t == 0).isEmpty()) {
                         return false;
                     }
