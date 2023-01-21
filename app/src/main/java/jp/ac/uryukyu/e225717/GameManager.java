@@ -12,11 +12,6 @@ public class GameManager {
      */
     Othello othello;
 
-    GameManager() {
-        this.initialize();
-        return;
-    }
-
     /**
      * 状態の初期化
      */

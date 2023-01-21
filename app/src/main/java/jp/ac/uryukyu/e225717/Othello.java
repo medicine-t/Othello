@@ -30,7 +30,7 @@ public class Othello {
 
     Othello() {
         System.out.println("white: o / black: x");
-        turn = 0;
+        setTurn(0);
     }
 
     /**
