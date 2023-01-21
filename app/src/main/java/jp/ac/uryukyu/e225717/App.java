@@ -5,8 +5,16 @@ package jp.ac.uryukyu.e225717;
 
 import java.util.Scanner;
 
+/**
+ * メインクラス
+ */
 public class App {
 
+    /**
+     * メインクラス
+     * 
+     * @param args コマンドライン引数
+     */
     public static void main(String[] args) {
         GameManager gameManager = new GameManager();
 

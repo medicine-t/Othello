@@ -5,6 +5,9 @@ import java.util.Random;
 
 import org.apache.commons.lang3.tuple.MutablePair;
 
+/**
+ * 有効手からランダムに選択する
+ */
 public class RandomWalk implements Player {
     @Override
     public MutablePair<Integer, Integer> play(Othello othello) {

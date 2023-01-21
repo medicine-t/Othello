@@ -2,10 +2,24 @@ package jp.ac.uryukyu.e225717;
 
 import org.apache.commons.lang3.tuple.MutablePair;
 
+/**
+ * ゲームセッションを管理する。
+ * 交互にプレイヤーを動作させるなど
+ */
 public class GameManager {
-
+    /**
+     * ゲームの盤面操作にまつわる機能を管理
+     */
     Othello othello;
 
+    GameManager() {
+        this.initialize();
+        return;
+    }
+
+    /**
+     * 状態の初期化
+     */
     private void initialize() {
         this.othello = new Othello();
     }
@@ -16,7 +30,7 @@ public class GameManager {
      * @param pl1 先手。Playerのinterfaceを実装している必要がある。
      * @param pl2 後手。Playerのinterfaceを実装している必要がある。
      */
-    int sessionStart(Player pl1, Player pl2) {
+    public int sessionStart(Player pl1, Player pl2) {
         this.initialize();
         while (true) {
             othello.printBoard();
@@ -71,7 +85,7 @@ public class GameManager {
      * 
      * @return boolean
      */
-    boolean isFinish() {
+    public boolean isFinish() {
         for (int t = 0; t < 2; t++) {
             for (int i = 0; i < othello.board.BOARD_HEIGHT; i++) {
                 for (int j = 0; j < othello.board.BOARD_WIDTH; j++) {
