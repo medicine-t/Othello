@@ -29,6 +29,7 @@ public class GameManager {
      * 
      * @param pl1 先手。Playerのinterfaceを実装している必要がある。
      * @param pl2 後手。Playerのinterfaceを実装している必要がある。
+     * @return 先手番勝利で1,引き分けで0,後手番勝利で-1
      */
     public int sessionStart(Player pl1, Player pl2) {
         this.initialize();
