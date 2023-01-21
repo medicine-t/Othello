@@ -19,7 +19,7 @@ public class InteractivePlayer implements Player {
         try {
             int i = 0, j = 0;
             while (true) {
-                System.out.println("==========================");
+
                 System.out.printf("現在の手番は%s\n", othello.getTurn() % 2 == 1 ? "o" : "x");
                 System.out.println("縦の番号 横の番号  の形式で入力");
                 i = stdin.nextInt();

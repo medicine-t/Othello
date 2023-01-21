@@ -42,6 +42,7 @@ public class OthelloBoard {
      * 先手番の駒を`x`,後手番の駒を`o`,未使用のマスは`.`で表される
      */
     public void printBoard() {
+        System.out.println("==========================");
         System.out.println(" 01234567");
         for (int i = 0; i < BOARD_HEIGHT; i++) {
             System.out.printf("%d", i);
