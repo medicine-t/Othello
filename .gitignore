@@ -9,3 +9,5 @@ build
 *.class
 
 *.jar
+
+*.pdf
